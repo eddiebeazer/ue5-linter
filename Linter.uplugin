@@ -1,0 +1,60 @@
+{
+	"FileVersion": 3,
+	"Version": 10,
+	"VersionName": "2.3",
+	"FriendlyName": "Linter",
+	"Description": "",
+	"Category": "Other",
+	"CreatedBy": "Michael Allar",
+	"CreatedByURL": "https://gamemak.in",
+	"DocsURL": "http://discord.gamemak.in",
+	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/ca0639af6339476da86fa3bcf15de8ec",
+	"SupportURL": "http://discord.gamemak.in",
+	"EngineVersion": "5.1.0",
+	"CanContainContent": true,
+	"Installed": true,
+	"Modules": [
+		{
+			"Name": "Linter",
+			"Type": "Editor",
+			"LoadingPhase": "PreDefault",
+			"WhitelistPlatforms": [
+				"Win64",
+				"Mac",
+				"Linux"
+			],
+			"BlacklistTargets": [
+				"Server",
+				"Client"
+			]
+		},
+		{
+			"Name": "GamemakinLinter",
+			"Type": "Editor",
+			"LoadingPhase": "PreDefault",
+			"WhitelistPlatforms": [
+				"Win64",
+				"Mac",
+				"Linux"
+			],
+			"BlacklistTargets": [
+				"Server",
+				"Client"
+			]
+		},
+		{
+			"Name": "MarketplaceLinter",
+			"Type": "Editor",
+			"LoadingPhase": "PreDefault",
+			"WhitelistPlatforms": [
+				"Win64",
+				"Mac",
+				"Linux"
+			],
+			"BlacklistTargets": [
+				"Server",
+				"Client"
+			]
+		}
+	]
+}
