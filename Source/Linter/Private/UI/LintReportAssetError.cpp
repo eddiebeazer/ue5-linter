@@ -1,5 +1,7 @@
 // Copyright 2019-2020 Gamemakin LLC. All Rights Reserved.
 #include "UI/LintReportAssetError.h"
+
+#include "LinterStyle.h"
 #include "Widgets/Layout/SBorder.h"
 #include "Widgets/SBoxPanel.h"
 #include "Widgets/Layout/SExpandableArea.h"

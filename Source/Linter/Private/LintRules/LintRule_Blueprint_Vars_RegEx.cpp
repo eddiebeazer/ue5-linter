@@ -32,7 +32,7 @@ bool ULintRule_Blueprint_Vars_Regex::PassesRule_Internal_Implementation(UObject*
 		FText TypeName = UEdGraphSchema_K2::TypeToText(Desc.VarType);
 		bool bIsBool = Desc.VarType.PinCategory == UEdGraphSchema_K2::PC_Boolean;
 		
-		FRegexMatcher Matcher(bIsBool ? BoolTestRegexPattern : TestRegexPattern, PropName);
+		FRegexMatcher Matcher((bIsBool && bUseLowercaseBPrefixForBooleans) ? BoolTestRegexPattern : TestRegexPattern, PropName);
 		bool bFoundMatch = Matcher.FindNext();
 
 		if ((bFoundMatch && bMustNotContainRegexPattern) || (!bFoundMatch && !bMustNotContainRegexPattern))

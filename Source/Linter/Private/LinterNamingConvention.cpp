@@ -1,4 +1,6 @@
 #include "LinterNamingConvention.h"
+
+#include "AnyObject_LinterDummyClass.h"
 #include "DetailLayoutBuilder.h"
 #include "PropertyCustomizationHelpers.h"
 #include "Templates/SharedPointer.h"

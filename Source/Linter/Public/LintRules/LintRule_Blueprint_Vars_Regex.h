@@ -3,6 +3,7 @@
 
 #include "CoreMinimal.h"
 #include "LintRule.h"
+#include "LintRule_Blueprint_Base.h"
 
 #include "LintRule_Blueprint_Vars_Regex.generated.h"
 
@@ -15,7 +16,7 @@ public:
 	ULintRule_Blueprint_Vars_Regex(const FObjectInitializer& ObjectInitializer);
 
 	UPROPERTY(EditDefaultsOnly, Category = "Settings")
-	bool bUseLowercaseBPrefixForBooleans = true;
+	bool bUseLowercaseBPrefixForBooleans = false;
 
 	UPROPERTY(EditAnywhere, Category = "Settings")
 	FString RegexPatternString;

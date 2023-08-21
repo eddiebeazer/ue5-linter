@@ -2,6 +2,7 @@
 #include "LintRules/LintRule_Blueprint_Vars_ConfigCategories.h"
 #include "LintRuleSet.h"
 #include "Engine/Blueprint.h"
+#include "Kismet2/BlueprintEditorUtils.h"
 #include "EdGraphSchema_K2.h"
 
 ULintRule_Blueprint_Vars_ConfigCategories::ULintRule_Blueprint_Vars_ConfigCategories(const FObjectInitializer& ObjectInitializer)

@@ -258,6 +258,10 @@ int32 ULinterCommandlet::Main(const FString& InParams)
 			}
 		}
 	}
+	if (Switches.Contains(TEXT("IgnoreErrors")))
+	{
+		return 0;
+	}
 
 	if (NumErrors > 0 || Switches.Contains(TEXT("TreatWarningsAsErrors")) && NumWarnings > 0)
 	{

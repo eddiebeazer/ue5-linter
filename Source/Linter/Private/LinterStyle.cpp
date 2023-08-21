@@ -81,7 +81,7 @@ void FLinterStyle::Initialize()
 		StyleSet->Set("Linter.Padding",  2.0f);
 
 		// PaCK Fonts
-		const FTextBlockStyle NormalText = FEditorStyle::GetWidgetStyle<FTextBlockStyle>("NormalText");
+		const FTextBlockStyle NormalText = FAppStyle::GetWidgetStyle<FTextBlockStyle>("NormalText");
 
 		FTextBlockStyle NameText = FTextBlockStyle(NormalText)
 			.SetColorAndOpacity(FLinearColor(0.9f, 0.9f, 0.9f));
