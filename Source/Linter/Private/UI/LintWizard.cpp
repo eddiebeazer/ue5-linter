@@ -551,7 +551,7 @@ void SLintWizard::Construct(const FArguments& InArgs)
 	FContentBrowserModule& ContentBrowserModule = FModuleManager::Get().LoadModuleChecked<FContentBrowserModule>("ContentBrowser");
 	TArray<FAssetData> AssetDatas;
 	FARFilter Filter;
-	Filter.ClassNames.Add(UWorld::StaticClass()->GetFName());
+	Filter.ClassPaths.Add(UWorld::StaticClass()->GetClassPathName());
 	Filter.bRecursivePaths = true;
 	Filter.PackagePaths.Add(TEXT("/Game"));
 	AssetRegistryModule.Get().GetAssets(Filter, AssetDatas);
