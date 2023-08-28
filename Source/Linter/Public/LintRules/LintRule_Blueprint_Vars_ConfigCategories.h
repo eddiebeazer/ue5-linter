@@ -3,6 +3,7 @@
 
 #include "CoreMinimal.h"
 #include "LintRule.h"
+#include "LintRule_Blueprint_Base.h"
 
 #include "LintRule_Blueprint_Vars_ConfigCategories.generated.h"
 

@@ -21,6 +21,9 @@
 #include "Dom/JsonValue.h"
 #include "DesktopPlatformModule.h"
 #include "IDesktopPlatform.h"
+#include "Linter.h"
+#include "LinterStyle.h"
+#include "Interfaces/IPluginManager.h"
 #include "Misc/FileHelper.h"
 #include "Widgets/Input/SComboButton.h"
 #include "UI/LintReportRuleDetails.h"
@@ -176,12 +179,12 @@ void SLintReport::Construct(const FArguments& Args)
 		.VAlign(VAlign_Top)
 		[
 			SNew(SBorder)
-			.BorderImage(FEditorStyle::GetBrush("NoBorder"))
+			.BorderImage(FAppStyle::GetBrush("NoBorder"))
 			.Padding(FMargin(4.0f, 0.0f, 4.0f, 2.0f))
 			//.Visibility_Lambda([&]() { return AssetErrorLists.Num() > 0 ? EVisibility::SelfHitTestInvisible : EVisibility::Collapsed; })
 			[
 				SNew(SBorder)
-				.BorderImage(FEditorStyle::GetBrush("ToolPanel.GroupBorder"))
+				.BorderImage(FAppStyle::GetBrush("ToolPanel.GroupBorder"))
 				.Padding(FMargin(2.0f, 0.0f, 2.0f, 2.0f))
 				[
 
@@ -194,8 +197,8 @@ void SLintReport::Construct(const FArguments& Args)
 					[
 						SAssignNew( ViewOptionsComboButton, SComboButton )
 						.ContentPadding(0)
-						.ForegroundColor_Lambda([&]() { return ViewOptionsComboButton->IsHovered() ? FEditorStyle::GetSlateColor("InvertedForeground") : FEditorStyle::GetSlateColor("DefaultForeground"); })
-						.ButtonStyle( FEditorStyle::Get(), "ToggleButton" ) // Use the tool bar item style for this button
+						.ForegroundColor_Lambda([&]() { return ViewOptionsComboButton->IsHovered() ? FAppStyle::GetSlateColor("InvertedForeground") : FAppStyle::GetSlateColor("DefaultForeground"); })
+						.ButtonStyle( FAppStyle::Get(), "ToggleButton" ) // Use the tool bar item style for this button
 						.OnGetMenuContent( this, &SLintReport::GetViewButtonContent )
 						.ButtonContent()
 						[
@@ -204,7 +207,7 @@ void SLintReport::Construct(const FArguments& Args)
 							.AutoWidth()
 							.VAlign(VAlign_Center)
 							[
-								SNew(SImage).Image( FEditorStyle::GetBrush("GenericViewButton") )
+								SNew(SImage).Image( FAppStyle::GetBrush("GenericViewButton") )
 							]
  
 							+SHorizontalBox::Slot()

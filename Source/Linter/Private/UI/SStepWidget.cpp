@@ -56,11 +56,11 @@ void SStepWidget::Construct(const FArguments& Args)
 	ChildSlot
 	[
 		SNew(SBorder)
-		.BorderImage(FEditorStyle::GetBrush("NoBorder"))
+		.BorderImage(FAppStyle::GetBrush("NoBorder"))
 		.Padding(PaddingAmount)
 		[
 			SNew(SBorder)
-			.BorderImage(FEditorStyle::GetBrush("ToolPanel.GroupBorder"))
+			.BorderImage(FAppStyle::GetBrush("ToolPanel.GroupBorder"))
 			.Padding(PaddingAmount)
 			[
 				SNew(SHorizontalBox)

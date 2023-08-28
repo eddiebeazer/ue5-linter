@@ -10,6 +10,7 @@
 #include "IAssetRegistry.h"
 #include "IAssetTools.h"
 #include "AssetRegistryModule.h"
+#include "MaterialDomain.h"
 
 
 ULintRule::ULintRule(const FObjectInitializer& ObjectInitializer)
