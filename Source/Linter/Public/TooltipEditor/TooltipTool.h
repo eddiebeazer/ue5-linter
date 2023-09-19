@@ -14,7 +14,6 @@
 #include "Widgets/Input/SComboBox.h"
 #include "Widgets/Input/SMultiLineEditableTextBox.h"
 #include "Widgets/Views/SListView.h"
-#include "AssetData.h"
 #include "Engine/Blueprint.h"
 #include "K2Node_FunctionEntry.h"
 #include "K2Node_FunctionResult.h"

@@ -2,8 +2,6 @@
 
 #include "LinterCommandlet.h"
 #include "Editor.h"
-#include "AssetRegistryModule.h"
-#include "AssetData.h"
 #include "Engine/ObjectLibrary.h"
 #include "Dom/JsonObject.h"
 #include "Dom/JsonValue.h"
@@ -16,6 +14,7 @@
 #include "LinterSettings.h"
 #include "LintRule.h"
 #include "LintRuleSet.h"
+#include "AssetRegistry/AssetRegistryModule.h"
 
 DEFINE_LOG_CATEGORY_STATIC(LinterCommandlet, All, All);
 

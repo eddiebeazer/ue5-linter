@@ -3,9 +3,6 @@
 
 #include "CoreGlobals.h"
 #include "Delegates/Delegate.h"
-#include "AssetRegistryModule.h"
-#include "IAssetRegistry.h"
-#include "AssetData.h"
 #include "SlateOptMacros.h"
 #include "Widgets/Layout/SSeparator.h"
 #include "Widgets/Views/SListView.h"
@@ -27,6 +24,7 @@
 #include "LinterStyle.h"
 #include "LintRuleSet.h"
 #include "LinterSettings.h"
+#include "AssetRegistry/AssetRegistryModule.h"
 #include "UI/SAssetLinkWidget.h"
 
 // This is only valid within a single file, and must be undefined before the end of the file
