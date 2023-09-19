@@ -7,7 +7,6 @@
 #include "Widgets/Layout/SExpandableArea.h"
 #include "ContentBrowserModule.h"
 #include "IContentBrowserSingleton.h"
-#include "AssetRegistryModule.h"
 #include "Widgets/Input/SHyperlink.h"
 #include "Widgets/Layout/SSpacer.h"
 #include "IAssetTools.h"
@@ -19,7 +18,7 @@
 #include "UI/LintReportRuleErrorList.h"
 #include "LintRule.h"
 #include "AssetThumbnail.h"
-
+#include "AssetRegistry/AssetRegistryModule.h"
 
 
 #define LOCTEXT_NAMESPACE "LintReport"

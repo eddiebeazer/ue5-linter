@@ -6,9 +6,6 @@
 #include "LevelEditor.h"
 #include "Widgets/Input/SButton.h"
 #include "Styling/SlateStyle.h"
-#include "AssetRegistryModule.h"
-#include "IAssetRegistry.h"
-#include "AssetData.h"
 #include "ContentBrowserModule.h"
 #include "PropertyEditorModule.h"
 
@@ -18,6 +15,7 @@
 #include "LinterSettings.h"
 #include "UI/LintWizard.h"
 #include "LintRuleSet.h"
+#include "AssetRegistry/AssetRegistryModule.h"
 
 #define LOCTEXT_NAMESPACE "FLinterModule"
 

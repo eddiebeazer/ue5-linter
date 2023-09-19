@@ -4,8 +4,8 @@
 #include "CoreMinimal.h"
 #include "HAL/ThreadSafeCounter.h"
 #include "HAL/Runnable.h"
-#include "AssetData.h"
 #include "Linter.h"
+#include "LintRuleSet.h"
 
 class FLintRunner : public FRunnable
 {

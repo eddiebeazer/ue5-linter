@@ -1,10 +1,15 @@
 // Copyright 2019-2020 Gamemakin LLC. All Rights Reserved.
 #include "UI/LintReportRuleError.h"
+
+#include "ContentBrowserModule.h"
+#include "IContentBrowserSingleton.h"
+#include "LinterStyle.h"
 #include "Widgets/Layout/SBorder.h"
 #include "Widgets/SBoxPanel.h"
 #include "Widgets/Layout/SExpandableArea.h"
 #include "Widgets/Input/SHyperlink.h"
 #include "LintRule.h"
+#include "AssetRegistry/AssetRegistryModule.h"
 #include "Widgets/Views/SListView.h"
 #include "Widgets/Views/STableRow.h"
 #include "Widgets/Layout/SBox.h"

@@ -5,12 +5,11 @@
 #include "Materials/Material.h"
 #include "Kismet2/BlueprintEditorUtils.h"
 #include "Engine/Blueprint.h"
-#include "AssetData.h"
 #include "Modules/ModuleManager.h"
-#include "IAssetRegistry.h"
 #include "IAssetTools.h"
-#include "AssetRegistryModule.h"
 #include "MaterialDomain.h"
+#include "AssetRegistry/AssetRegistryModule.h"
+#include "AssetRegistry/IAssetRegistry.h"
 
 
 ULintRule::ULintRule(const FObjectInitializer& ObjectInitializer)
