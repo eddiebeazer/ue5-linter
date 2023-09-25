@@ -1,17 +1,6 @@
-# Introduction 
-
-This is just a copy of the populer LinterV2 plugin on Unreal Engine Marketplace - https://www.unrealengine.com/marketplace/en-US/product/linter-v2.
-
-This is updated to work for UE5.  I will keep updating it for myself and posting updates here. This will remain public until someone asks me to take it down
-
 # Getting Started
 
-Go to the [tags](https://dev.azure.com/thedigitalsages/Unreal%20Engine%20Plugins/_git/ue5-linter/tags) section of this repo and download the repo.  Once you download it, put the contents of this repo in
-
-`GameProject/Plugins/Linter`
-
-One thing to note, you will have to compile your poject via Visual Studio, Rider or VS Code.  
-
-# Issues
-
-Unfortunately Azure Dev Ops doesn't have a robust issue tracker for public projects. If you have an issue, just open a PR or send me an email and I'll get to it
+1. Go to the [Releases](https://github.com/eddiebeazer/ue5-linter/releases/tag/5.3) section of this repo, select the correct version and download the zip named "Linter 5.x".
+2. Once you download it, extract the contents into `GameProject/Plugins/`.  If done correctly you should have the following folder structure, `GameProject/Plugins/Linter`
+3. Right click on your `GameName.uproject` and click **Generate Visual Studio Project Files**.
+4. Start your project
