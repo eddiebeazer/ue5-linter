@@ -59,7 +59,7 @@ void SLintReportRuleDetails::Construct(const FArguments& Args)
 	FAssetRegistryModule& AssetRegistryModule = FModuleManager::LoadModuleChecked<FAssetRegistryModule>(TEXT("AssetRegistry"));
 	IAssetRegistry& AssetRegistry = AssetRegistryModule.Get();
 
-	RuleAssetData = AssetRegistry.GetAssetByObjectPath(FName(*BrokenRule->GetPathName()), true);
+	RuleAssetData = AssetRegistry.GetAssetByObjectPath(FSoftObjectPath(*BrokenRule->GetPathName()), true);
 	FText RuleAssetPath;
 	if (RuleAssetData.IsValid())
 	{

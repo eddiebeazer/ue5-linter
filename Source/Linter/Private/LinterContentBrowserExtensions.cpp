@@ -86,7 +86,7 @@ void FLinterContentBrowserExtensions::InstallHooks(FLinterModule* LinterModule, 
 				{
 					const FAssetData& Asset = *AssetIt;
 					// Cannot rename redirectors or classes or cooked packages
-					if (!Asset.IsRedirector() && Asset.AssetClass != NAME_Class && !(Asset.PackageFlags & PKG_FilterEditorOnly))
+					if (!Asset.IsRedirector() && Asset.AssetClassPath.GetAssetName() != NAME_Class && !(Asset.PackageFlags & PKG_FilterEditorOnly))
 					{
 						if (Asset.GetClass()->IsChildOf(UBlueprint::StaticClass()))
 						{
@@ -123,7 +123,7 @@ void FLinterContentBrowserExtensions::InstallHooks(FLinterModule* LinterModule, 
 				{
 					const FAssetData& Asset = *AssetIt;
 					// Cannot rename redirectors or classes or cooked packages
-					if (!Asset.IsRedirector() && Asset.AssetClass != NAME_Class && !(Asset.PackageFlags & PKG_FilterEditorOnly))
+					if (!Asset.IsRedirector() && Asset.AssetClassPath.GetAssetName() != NAME_Class && !(Asset.PackageFlags & PKG_FilterEditorOnly))
 					{
 						bAnyAssetCanBeRenamed = true;
 						break;

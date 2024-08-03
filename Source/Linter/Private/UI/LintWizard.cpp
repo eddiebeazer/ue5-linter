@@ -47,7 +47,9 @@ void SLintWizard::Construct(const FArguments& InArgs)
 	IAssetRegistry& AssetRegistry = AssetRegistryModule.Get();
 
 	TArray<FAssetData> FoundRuleSets;
-	AssetRegistry.GetAssetsByClass(ULintRuleSet::StaticClass()->GetFName(), FoundRuleSets, true);
+	const UClass* LintRuleSetClass = ULintRuleSet::StaticClass();
+	FTopLevelAssetPath LintRuleTopLevelAssetPath(FName(LintRuleSetClass->GetPackage()->GetPathName()), LintRuleSetClass->GetFName());
+	AssetRegistry.GetAssetsByClass(LintRuleTopLevelAssetPath, FoundRuleSets, true);
 
 	// Attempt to get all RuleSets in memory so that linting tools are better aware of them
 	for (const FAssetData& RuleSetData : FoundRuleSets)
@@ -268,7 +270,9 @@ void SLintWizard::Construct(const FArguments& InArgs)
 									FARFilter Filter;
 									Filter.bRecursivePaths = true;
 									Filter.PackagePaths.Add("/Game");
-									Filter.ClassNames.Add("ObjectRedirector");
+									const UClass* ObjectRedirectorClass = UObjectRedirector::StaticClass();
+									FTopLevelAssetPath ObjectRedirectorTopLevelAssetPath(FName(ObjectRedirectorClass->GetPackage()->GetPathName()), ObjectRedirectorClass->GetFName());
+									Filter.ClassPaths.Add(ObjectRedirectorTopLevelAssetPath);
 
 									// Query for a list of assets in the selected paths
 									TArray<FAssetData> AssetList;
@@ -279,7 +283,7 @@ void SLintWizard::Construct(const FArguments& InArgs)
 										TArray<FString> ObjectPaths;
 										for (const auto& Asset : AssetList)
 										{
-											ObjectPaths.Add(Asset.ObjectPath.ToString());
+											ObjectPaths.Add(Asset.GetObjectPathString());
 										}
 
 										ScopedSlowTask.EnterProgressFrame(0.25f, LOCTEXT("Linter.FixUpRedirects.LoadingRedirectors", "Loading redirectors..."));

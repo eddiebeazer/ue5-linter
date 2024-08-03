@@ -119,7 +119,9 @@ void FLinterModule::TryToLoadAllLintRuleSets()
 	IAssetRegistry& AssetRegistry = AssetRegistryModule.Get();
 
 	TArray<FAssetData> FoundRuleSets;
-	AssetRegistry.GetAssetsByClass(ULintRuleSet::StaticClass()->GetFName(), FoundRuleSets, true);
+	const UClass* LintRuleSetClass = ULintRuleSet::StaticClass();
+	FTopLevelAssetPath LintRuleTopLevelAssetPath(FName(LintRuleSetClass->GetPackage()->GetPathName()), LintRuleSetClass->GetFName());
+	AssetRegistry.GetAssetsByClass(LintRuleTopLevelAssetPath, FoundRuleSets, true);
 
 	// Attempt to get all RuleSets in memory so that linting tools are better aware of them
 	for (const FAssetData& RuleSetData : FoundRuleSets)

@@ -62,7 +62,16 @@ TArray<FLintRuleViolation> ULintRuleSet::LintPath(TArray<FString> AssetPaths, FS
 	for (FAssetData const& Asset : AssetList)
 	{
 		check(Asset.IsValid());
-		UE_LOG(LogLinter, Verbose, TEXT("Creating Lint Thread for asset \"%s\"."), *Asset.AssetName.ToString());
+		// TODO - ADD LIST OF ASSETS TO SKIP THAT CAN BE CONFIGURED IN EDITOR
+		if (Asset.AssetName.ToString().Contains(TEXT("ABP_Humanoid")))
+		{
+			UE_LOG(LogLinter, Verbose, TEXT("Skipping asset \"%s\"."), *Asset.AssetName.ToString());
+			continue;
+		}
+		else
+		{
+			UE_LOG(LogLinter, Verbose, TEXT("Creating Lint Thread for asset \"%s\"."), *Asset.AssetName.ToString());
+		}
 		UObject* Object = Asset.GetAsset();
 		check(Object != nullptr);
 
@@ -82,7 +91,7 @@ TArray<FLintRuleViolation> ULintRuleSet::LintPath(TArray<FString> AssetPaths, FS
 		}
 		else
 		{
-			Threads.Push(FRunnableThread::Create(Runner, *FString::Printf(TEXT("FLintRunner - %s"), *Asset.ObjectPath.ToString()), 0, TPri_Normal));
+			Threads.Push(FRunnableThread::Create(Runner, *FString::Printf(TEXT("FLintRunner - %s"), *Asset.GetObjectPathString()), 0, TPri_Normal));
 			if (ParentScopedSlowTask != nullptr)
 			{
 				ParentScopedSlowTask->EnterProgressFrame(1.0f);

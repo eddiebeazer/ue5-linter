@@ -3,7 +3,7 @@
 
 #include "CoreMinimal.h"
 #include "LintRule.h"
-
+#include "LintRules/LintRule_Blueprint_Base.h"
 #include "LintRule_Blueprint_Vars_EditableMustHaveTooltip.generated.h"
 
 UCLASS(BlueprintType, Blueprintable, Abstract)

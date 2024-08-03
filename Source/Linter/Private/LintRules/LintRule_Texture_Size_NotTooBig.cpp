@@ -3,7 +3,7 @@
 #include "LintRuleSet.h"
 #include "LinterNamingConvention.h"
 #include "HAL/FileManager.h"
-
+// @TODO reimplement this class.  Look at Marketplace ruleset for implementation
 ULintRule_Texture_Size_NotTooBig::ULintRule_Texture_Size_NotTooBig(const FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer)
 {

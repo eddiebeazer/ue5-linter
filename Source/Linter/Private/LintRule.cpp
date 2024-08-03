@@ -239,7 +239,7 @@ bool FLintRuleViolation::PopulateAssetData()
 
 	if (Violator.IsValid())
 	{
-		ViolatorAssetData = AssetRegistry.GetAssetByObjectPath(FName(*Violator->GetPathName()));
+		ViolatorAssetData = AssetRegistry.GetAssetByObjectPath(FSoftObjectPath(*Violator->GetPathName()));
 		return ViolatorAssetData.IsValid();
 	}
 

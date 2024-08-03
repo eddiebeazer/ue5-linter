@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "UObject/ObjectRedirector.h"
 #include "Widgets/SCompoundWidget.h"
 #include "Widgets/Workflow/SWizard.h"
 #include "UI/SStepWidget.h"

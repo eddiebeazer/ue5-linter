@@ -3,7 +3,7 @@
 #include "LintRuleSet.h"
 #include "LinterNamingConvention.h"
 #include "HAL/FileManager.h"
-
+// @TODO reimplement this class.  Look at Marketplace ruleset for implementation
 ULintRule_Texture_Size_PowerOfTwo::ULintRule_Texture_Size_PowerOfTwo(const FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer)
 {
@@ -31,6 +31,7 @@ bool ULintRule_Texture_Size_PowerOfTwo::PassesRule(UObject* ObjectToLint, const 
 bool ULintRule_Texture_Size_PowerOfTwo::PassesRule_Internal_Implementation(UObject* ObjectToLint, const ULintRuleSet* ParentRuleSet, TArray<FLintRuleViolation>& OutRuleViolations) const
 {
 	const UTexture2D* Texture = CastChecked<UTexture2D>(ObjectToLint);
+
 
 	int32 TexSizeX = Texture->GetSizeX();
 	int32 TexSizeY = Texture->GetSizeY();

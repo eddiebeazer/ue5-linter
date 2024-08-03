@@ -30,7 +30,7 @@ FDlgBatchRenameTool::FDlgBatchRenameTool(const TArray<FAssetData> Assets)
 			.SupportsMinimize(false).SupportsMaximize(false)
 			.SaneWindowPlacement(true)
 			.AutoCenter(EAutoCenter::PreferredWorkArea)
-			.ClientSize(FVector2D(350, 165));
+			.ClientSize(FVector2D(350, 185));
 
 		TSharedPtr<SBorder> DialogWrapper =
 			SNew(SBorder)
@@ -74,7 +74,7 @@ FDlgBatchRenameTool::EResult FDlgBatchRenameTool::ShowModal()
 			const FAssetData& Asset = *AssetIt;
 
 			// Early out on assets that can not be renamed
-			if (!(!Asset.IsRedirector() && Asset.AssetClass != NAME_Class && !(Asset.PackageFlags & PKG_FilterEditorOnly)))
+			if (!(!Asset.IsRedirector() && Asset.AssetClassPath.GetAssetName() != NAME_Class && !(Asset.PackageFlags & PKG_FilterEditorOnly)))
 			{
 				continue;
 			}

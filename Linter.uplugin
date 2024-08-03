@@ -10,7 +10,7 @@
 	"DocsURL": "http://discord.gamemak.in",
 	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/ca0639af6339476da86fa3bcf15de8ec",
 	"SupportURL": "http://discord.gamemak.in",
-	"EngineVersion": "5.3.0",
+	"EngineVersion": "5.4.0",
 	"CanContainContent": true,
 	"Installed": true,
 	"Modules": [

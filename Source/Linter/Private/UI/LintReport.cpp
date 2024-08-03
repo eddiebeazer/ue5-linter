@@ -282,7 +282,7 @@ void SLintReport::Rebuild(const ULintRuleSet* SelectedLintRuleSet)
 		{
 			AssetData = UniqueViolatorViolations[0]->ViolatorAssetData;
 			AssetJsonObject->SetStringField(TEXT("ViolatorAssetName"), AssetData.AssetName.ToString());
-			AssetJsonObject->SetStringField(TEXT("ViolatorAssetPath"), AssetData.ObjectPath.ToString());
+			AssetJsonObject->SetStringField(TEXT("ViolatorAssetPath"), AssetData.GetObjectPathString());
 			AssetJsonObject->SetStringField(TEXT("ViolatorFullName"), AssetData.GetFullName());
 			//@TODO: Thumbnail export?
 
