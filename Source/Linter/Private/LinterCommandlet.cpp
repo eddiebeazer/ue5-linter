@@ -84,11 +84,6 @@ int32 ULinterCommandlet::Main(const FString& InParams)
 
 	UE_LOG(LinterCommandlet, Display, TEXT("Using rule set: %s"), *RuleSet->GetFullName());
 
-	if (Paths.Num() == 0)
-	{
-		Paths.Add(TEXT("/Game"));
-	}
-
 	UE_LOG(LinterCommandlet, Display, TEXT("Attempting to Lint paths: %s"), *FString::Join(Paths, TEXT(", ")));
 
 	const TArray<FLintRuleViolation> RuleViolations = RuleSet->LintPath(Paths);
